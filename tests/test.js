@@ -449,7 +449,7 @@ describe('main tests', function() {
 
         it('should create a custom format using customPath', function(done) {
             process.argv.push('--customPath');
-            process.argv.push('./customFormatExample.json');
+            process.argv.push('./customDefinitionExample.json');
 
             args = args.parse();
             args.start = path.join(__dirname, '../');
@@ -458,7 +458,7 @@ describe('main tests', function() {
             process.argv.pop();
 
             checker.init(args, function(err, filtered) {
-                var customFormatContent = fs.readFileSync(path.join(__dirname, './../customFormatExample.json'), 'utf8');
+                var customFormatContent = fs.readFileSync(path.join(__dirname, './../customDefinitionExample.json'), 'utf8');
 
                 assert.notEqual(customFormatContent, undefined);
                 assert.notEqual(customFormatContent, null);
@@ -467,7 +467,7 @@ describe('main tests', function() {
 
                 //Test dynamically with the file directly
                 Object.keys(filtered).forEach(function(licenseItem) {
-                    Object.keys(customJson).forEach(function(definedItem) {
+                    Object.keys(customJson.format).forEach(function(definedItem) {
                         assert.notEqual(filtered[licenseItem][definedItem], 'undefined');
                     });
                 });

@@ -78,8 +78,7 @@ Options
 * `--csv` output in csv format.
 * `--csvComponentPrefix` prefix column for component in csv format.
 * `--out [filepath]` write the data to a specific file.
-* `--customPath` to add a custom Format file in JSON
-* `--overridesPath` to add a custom override JSON file to override license properties of any package
+* `--customPath` to add a custom definition file in JSON
 * `--exclude [list]` exclude modules which licenses are in the comma-separated list from the output
 * `--relativeLicensePath` output the location of the license files as relative paths
 * `--summary` output a summary of the license usage',
@@ -106,22 +105,23 @@ Examples
 license-checker --json > /path/to/licenses.json
 license-checker --csv --out /path/to/licenses.csv
 license-checker --unknown
-license-checker --customPath customFormatExample.json
+license-checker --customPath customDefinitionExample.json
 license-checker --exclude 'MIT, MIT OR X11, BSD, ISC'
 license-checker --packages 'react@16.3.0;react-dom@16.3.0;lodash@4.3.1'
 license-checker --excludePackages 'internal-1;internal-2'
 license-checker --onlyunknown
 ```
 
-Custom format
+Custom Definition File
 -------------
 
-The `--customPath` option can be used with CSV to specify the columns. Note that
-the first column, `module_name`, will always be used.
+The `--customPath` option can be used to specify a definition file that can define 
+the fields to include in the output, override field values in the output, define exclusions, 
+and more. Arguments will take precedence over the definition file where applicable.
 
-When used with JSON format, it will add the specified items to the usual ones.
 
-The available items are the following:
+The available fields include the following:
+Note that the first column, `module_name`, will always be used.
 - name
 - version
 - description
@@ -135,7 +135,7 @@ The available items are the following:
 - licenseModified
 
 You can also give default values for each item.
-See an example in [customFormatExample.json](customFormatExample.json).
+See an example in [customDefinitionExample.json](customDefinitionExample.json).
 
 Requiring
 ---------

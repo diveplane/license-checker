@@ -1,0 +1,30 @@
+{
+	"overrides": {
+		"packageName@1.0.0": {
+			"licenseFile": "my/custom/path/license"
+		},
+		"packageName2": {
+			"licenses": "MIT",
+			"licenseText": "Overridden license text"
+		}
+	},
+	"format": {
+		"name": "",
+		"version": "",
+		"description": "",
+		"licenses": "",
+		"copyright": "",
+		"licenseFile": "none",
+		"licenseText": "none",
+		"licenseModified": "no"
+	},
+	"failOn": [],
+	"onlyAllow": [],
+	"packages": [],
+	"exclude": [],
+	"excludePackages": [],
+	"excludePrivatePackages": false,
+	"unknown": false,
+	"onlyunknown": false,
+	"relativeLicensePath": "my/relative/path"
+}
