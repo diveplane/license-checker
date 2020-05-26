@@ -18,6 +18,19 @@
 		"licenseText": "none",
 		"licenseModified": "no"
 	},
+	"additionalLicenses": {
+		"packageName@1.0.0": {
+			"name": "packageName",
+			"version": "1.0.0",
+			"description": "",
+			"repository": "",
+			"publisher": "",
+			"email": "",
+			"url": "",
+			"licenses": "MIT",
+			"licenseFile": "my/custom/path/license"
+		}
+	},
 	"failOn": [],
 	"onlyAllow": [],
 	"packages": [],
